@@ -1,0 +1,142 @@
+/* Ui layout only */
+
+body{ height: 0; background: $color-white; margin: 0 0 40px 0; padding: 0 0 100px;  @include font-rempx(20); }
+
+.col { display: block; float: left; }
+.wrapper { max-width: 1140px; margin: 0 auto; padding: 0 15px;
+	@extend %clearfix;
+}
+
+.content { max-width: 965px; margin: 0 auto; }
+.content--med { max-width: 800px; margin: 0 auto; }
+
+.section--spacer { padding-top: 30px; padding-bottom: 30px; }
+
+header {
+	@extend %clearfix;
+}
+
+/* home page exclusive styling */
+.home-page { padding: 0 0 150px;
+	.home--header { width: 100%; height: 100%; background: #2e2e2e; box-sizing: border-box;	}
+	.head--box { float: left; max-width: 650px; background: #848484; padding: 30px; margin: 40px; box-sizing: border-box;
+		h1 { font-family: $font-reg; @include font-rempx(40); line-height: 48px; padding-bottom: 30px; color: $color-primary; }
+		p { font-size: 22px; line-height: 34px; padding: 20px 0 40px;color: white; max-width: 840px; color: $color-secondary; }
+	}
+
+	.navigation--sub {
+		ul { list-style: none; margin: 0;
+			li { margin: 0; padding: 20px;  color: $color-black;
+				.header--main { @include font-rempx(24); line-height: 28px; padding: 0 0 5px; margin: 0;  }
+				.header--desc { @include font-rempx(18); line-height: 22px; padding: 0; margin: 0; }
+				&:after { background: url('../images/icons/downarrow.png'); height: 23px; width: 35px; }
+			}
+			@extend %clearfix;
+		}
+	}
+
+	.bets--available { background: #d6d6d6; margin: 50px 0;
+		h2 { font-family: $font-reg; @include font-rempx(30); line-height: 48px; text-align: center; padding: 30px 0; color: $color-primary; }
+		ul.bets--available--feed { text-align: center; list-style: none; margin: 0;
+
+				li.bet { margin: 0 0 40px; padding: 40px;
+					.bet__name {  @include font-rempx(32); padding: 40px 0; }
+					button.bet__odds {  @include font-rempx(30); color: $color-secondary; background: $color-third;  padding: 10px 20px;
+						&:hover { background: $color-third-dark; transition: all 0.5s ease-in-out; }
+						&:after { @include font-rempx(22); content: '\A BET NOW!' ; height: 23px; width: 35px; /* keep incase want to go to new line white-space:pre; */ }
+					 }
+					 &:hover { background: #f2f2f2; transition: all 0.5s ease-in-out; }
+				}
+
+
+		}
+		@extend %clearfix;
+
+	}
+
+	.bets-footer { width: 100%; left: 0; bottom:0; position:fixed; z-index:150; _position:absolute; _top:expression(eval(document.documentElement.scrollTop+ (document.documentElement.clientHeight-this.offsetHeight))); height:auto; background: #f2f2f2; border-top: 4px solid #d6d6d6;;
+		h3 { font-family: $font-reg; @include font-rempx(20); padding: 20px 0; color: $color-primary; }
+		h5 {  @include font-rempx(26); float: left; padding: 7px 40px 0 0; }
+		input { }
+		.selection__returns { @include font-rempx(18); margin-left: 40px; }
+		button.js-place-bet {  @include font-rempx(18); color: $color-secondary; background: $color-third;  padding: 10px 20px;
+			&:hover { background: $color-third-dark; transition: all 0.5s ease-in-out; }
+		}
+	}
+
+	.receipts-list { background: #f2f2f2; border: 4px solid #d6d6d6; padding: 10px 20px;
+		h4 { font-family: $font-reg; @include font-rempx(20); padding: 0px 0; color: $color-primary; }
+		table { width: 100%;   }
+		.receipt__title { float: left; padding: 7px 40px 0 0; }
+
+	 }
+
+}
+
+
+
+/* font sizes */
+.font16 { font-size: 16px!important; line-height: 24px; }
+.font18 { font-size: 18px!important; line-height: 26px; }
+.font20 { @include font-rempx(20); line-height: 28px; }
+.font25 { @include font-rempx(25); line-height: 33px; }
+.font30 { @include font-rempx(30); line-height: 38px; }
+.font35 { @include font-rempx(35); line-height: 43px; }
+.font55 { @include font-rempx(55); line-height: 63px; padding: 20px 0 30px; margin: 0; }
+
+
+.nopadding { padding: 0; }
+.nomargin { margin: 0; }
+
+.clearfix { content: ""; display: table; clear: both; }
+
+
+
+/* misc */
+.show640 { display: none;}
+.show750  { display: none;}
+
+.spinner {
+		-webkit-animation-name: spinner;
+		-webkit-animation-duration: 1.2s;
+		-webkit-animation-iteration-count: infinite;
+		-webkit-animation-timing-function: linear;
+		animation-name: spinner;
+		animation-duration: 1.2s;
+		animation-timing-function: linear;
+		animation-iteration-count: infinite;
+		width: 128px;
+}
+
+@keyframes spinner {
+		from {
+				transform: rotate(0deg);
+		}
+
+		to {
+				transform: rotate(360deg);
+		}
+}
+
+@-webkit-keyframes spinner {
+		 from {
+				 transform: rotate(0deg);
+		 }
+
+		 to {
+				 transform: rotate(360deg);
+		 }
+ }
+
+.js-toggle { cursor: pointer; }
+.js-toggle-target { transition: all 0.5s ease-in-out; height: auto; }
+.is-hidden { display: none; }
+
+.animate_steps1 { -webkit-animation-delay: 0.5s; animation-delay: 0.5s; }
+.animate_steps2 { -webkit-animation-delay: 1s; animation-delay: 1s;}
+.animate_steps3 { -webkit-animation-delay: 1.5s; animation-delay:  1.5s; }
+.animate_steps4 { -webkit-animation-delay: 2s; animation-delay: 2s ; }
+.animate_steps5 { -webkit-animation-delay: 2.5s; animation-delay: 2.5s ; }
+.animate_steps6 { -webkit-animation-delay: 3s; animation-delay: 3s ; }
+.animate_steps7 { -webkit-animation-delay: 3.5s; animation-delay: 3.5s ; }
+.animate_steps8 { -webkit-animation-delay: 4s; animation-delay: 4s ; }

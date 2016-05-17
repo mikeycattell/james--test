@@ -1,0 +1,72 @@
+
+/*------------------------------------*\
+	$MEDIA QUERIES
+\*------------------------------------*/
+
+//1280px
+@media screen and (min-width: $bp-xlarge)  {
+
+}
+//960px
+@media screen and (max-width: $bp-large) {
+
+}
+//640px
+@media screen and (min-width: $bp-medium) {
+
+}
+
+
+// custom sizes to fix mobiles
+
+
+//750px iphone 6+ landscape
+@media screen and (max-width: 750px) {
+
+
+}
+
+
+//640px iphone 6 landscape
+@media screen and (max-width: 640px) {
+	.home-page .home--header { padding: 40px 0;	}
+	.home-page .head--box { float: none; margin: 0px auto;   max-width: 400px; }
+	.home-page .head--box h1 { @include font-rempx(26);  }
+
+	.home-page .bets--available h2 { @include font-rempx(22); line-height: 30px;  }
+	.home-page .bets--available ul.bets--available--feed li.bet { margin: 0 0 20px; padding: 20px; background: #fff; }
+	.home-page .bets--available ul.bets--available--feed li.bet .bet__name {  @include font-rempx(18); padding: 10px 0; }
+
+	.home-page .bets-footer h3 { padding: 20px 0 8px; }
+	.home-page .bets-footer h5 { @include font-rempx(22); line-height: 30px; padding: 7px 10px 0 0; }
+	.selection__stake input { max-width: 100px; }
+	.selection__action { display: block; width: 100%; }
+}
+
+//568px iphone 5 landscape
+@media screen and (max-width: 568px) {
+
+
+}
+
+
+//480px
+@media screen and (max-width: $bp-small) {
+
+}
+@media screen and (max-width: $bp-xsmall) {
+
+}
+
+//1205px
+@media screen and (max-width: $bp-nav-step1) {
+
+}
+//1093px
+@media screen and (max-width: $bp-nav-step2) {
+
+}
+ //981px
+@media screen and (max-width: $bp-nav-step3) {
+
+}
