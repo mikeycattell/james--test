@@ -12,35 +12,38 @@ body{ height: 0; background: $color-white; margin: 0 0 40px 0; padding: 0 0 100p
 
 .section--spacer { padding-top: 30px; padding-bottom: 30px; }
 
-header {
-	@extend %clearfix;
+header { background: black; padding: 10px 0;
+		nav { color: white; }
+		@extend %clearfix;
 }
 
 /* home page exclusive styling */
 .home-page { padding: 0 0 150px;
 	.home--header { width: 100%; height: 100%; background: #2e2e2e; box-sizing: border-box;	}
 	.head--box { float: left; max-width: 650px; background: #848484; padding: 30px; margin: 40px; box-sizing: border-box;
-		h1 { font-family: $font-reg; @include font-rempx(40); line-height: 48px; padding-bottom: 30px; color: $color-primary; }
-		p { font-size: 22px; line-height: 34px; padding: 20px 0 40px;color: white; max-width: 840px; color: $color-secondary; }
+		h1 { font-family: $font-bold; @include font-rempx(40); line-height: 48px; padding-bottom: 30px; color: $color-primary; text-transform: uppercase; }
+		p { font-family: $font-reg; font-size: 22px; line-height: 34px; padding: 20px 0 40px;color: white; max-width: 840px; color: $color-secondary; text-transform: uppercase;}
 	}
 
 	.navigation--sub {
 		ul { list-style: none; margin: 0;
-			li { margin: 0; padding: 20px;  color: $color-black;
-				.header--main { @include font-rempx(24); line-height: 28px; padding: 0 0 5px; margin: 0;  }
-				.header--desc { @include font-rempx(18); line-height: 22px; padding: 0; margin: 0; }
-				&:after { background: url('../images/icons/downarrow.png'); height: 23px; width: 35px; }
+			li { margin: 0; padding: 20px;  color: $color-black; position: relative;
+				.header--main { font-family: $font-bold; @include font-rempx(24); line-height: 28px; padding: 0 0 5px; margin: 0;  }
+				.header--desc { font-family: $font-reg; @include font-rempx(18); line-height: 22px; padding: 0; margin: 0; }
+				&:after { content: url('../images/icons/downarrow.png'); height: 23px; width: 35px; position: absolute; right: 50px; top: 40%; }
+				&:nth-child(2) { background: #f2f2f2; }
+				&:nth-child(3) { background: #d6d6d6; }
 			}
 			@extend %clearfix;
 		}
 	}
 
 	.bets--available { background: #d6d6d6; margin: 50px 0;
-		h2 { font-family: $font-reg; @include font-rempx(30); line-height: 48px; text-align: center; padding: 30px 0; color: $color-primary; }
+		h2 { font-family: $font-bold; @include font-rempx(30); line-height: 48px; text-align: center; padding: 30px 0; color: $color-primary; }
 		ul.bets--available--feed { text-align: center; list-style: none; margin: 0;
 
 				li.bet { margin: 0 0 40px; padding: 40px;
-					.bet__name {  @include font-rempx(32); padding: 40px 0; }
+					.bet__name {  font-family: $font-bold;  @include font-rempx(32); padding: 40px 0; }
 					button.bet__odds {  @include font-rempx(30); color: $color-secondary; background: $color-third;  padding: 10px 20px;
 						&:hover { background: $color-third-dark; transition: all 0.5s ease-in-out; }
 						&:after { @include font-rempx(22); content: '\A BET NOW!' ; height: 23px; width: 35px; /* keep incase want to go to new line white-space:pre; */ }
@@ -55,19 +58,21 @@ header {
 	}
 
 	.bets-footer { width: 100%; left: 0; bottom:0; position:fixed; z-index:150; _position:absolute; _top:expression(eval(document.documentElement.scrollTop+ (document.documentElement.clientHeight-this.offsetHeight))); height:auto; background: #f2f2f2; border-top: 4px solid #d6d6d6;;
-		h3 { font-family: $font-reg; @include font-rempx(20); padding: 20px 0; color: $color-primary; }
-		h5 {  @include font-rempx(26); float: left; padding: 7px 40px 0 0; }
+		h3 { font-family: $font-bold; @include font-rempx(20); padding: 20px 0; color: $color-primary; }
+		h5 { font-family: $font-bold; @include font-rempx(22); float: left; padding: 10px 20px 0 0; }
 		input { }
-		.selection__returns { @include font-rempx(18); margin-left: 40px; }
-		button.js-place-bet {  @include font-rempx(18); color: $color-secondary; background: $color-third;  padding: 10px 20px;
+		.selection__returns {    @include font-rempx(18); margin-left: 40px; }
+		button.js-place-bet {  @include font-rempx(20); color: $color-secondary; background: $color-third;  padding: 10px 20px;     margin: 3px 0 0 15px;
 			&:hover { background: $color-third-dark; transition: all 0.5s ease-in-out; }
 		}
 	}
 
 	.receipts-list { background: #f2f2f2; border: 4px solid #d6d6d6; padding: 10px 20px;
 		h4 { font-family: $font-reg; @include font-rempx(20); padding: 0px 0; color: $color-primary; }
-		table { width: 100%;   }
-		.receipt__title { float: left; padding: 7px 40px 0 0; }
+		table { width: 100%; border-bottom: 2px solid #d6d6d6; padding: 0 0 10px;
+			&:nth-last-child(1) { border-bottom: 0px;  }
+		}
+		.receipt__title {font-family: $font-bold;@include font-rempx(28);  float: left; padding: 7px 40px 0 0; text-align: left;}
 
 	 }
 

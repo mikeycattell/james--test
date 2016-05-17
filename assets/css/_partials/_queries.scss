@@ -41,6 +41,8 @@
 	.home-page .bets-footer h5 { @include font-rempx(22); line-height: 30px; padding: 7px 10px 0 0; }
 	.selection__stake input { max-width: 100px; }
 	.selection__action { display: block; width: 100%; }
+
+	.home-page .receipts-list .receipt__title { @include font-rempx(20);  }
 }
 
 //568px iphone 5 landscape
